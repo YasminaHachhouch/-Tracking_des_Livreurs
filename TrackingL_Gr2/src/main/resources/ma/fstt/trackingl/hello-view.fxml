@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="355.0" prefWidth="466.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.fstt.trackingl.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+       <Button fx:id="goToProduitsButton" text="Go to Produits" onAction="#goToProduitsView" />
+       <Button fx:id="goToCommandeButton" text="Go to Commandes" onAction="#goToCommandeView" />
+      <Label text="Nom :" />
+      <TextField fx:id="nom" />
+      <Label text="Telephone" />
+      <TextField fx:id="tele" />
+      <Button fx:id="ok" mnemonicParsing="false" onAction="#onSaveButtonClick" text="Save" />
+      <TableView fx:id="mytable" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="56.0" text="id" />
+          <TableColumn fx:id="col_nom" prefWidth="56.0" text="nom" />
+            <TableColumn fx:id="col_tele" prefWidth="140.0" text="telephone" />
+            <TableColumn fx:id="col_delete" prefWidth="89.0">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id_livreur" />
+                </cellValueFactory>
+                <graphic>
+                    <Button fx:id="deleteButton" text="Delete" />
+                </graphic>
+            </TableColumn>
+            <TableColumn fx:id="col_edit" prefWidth="89.0">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id_livreur" />
+                </cellValueFactory>
+                <graphic>
+                    <Button fx:id="editButton" text="Edit" />
+                </graphic>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </children>
+
+ 
+</VBox>
